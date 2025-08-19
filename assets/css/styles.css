@@ -1,0 +1,226 @@
+/* ==========================
+   TIPOGRAFÍAS Y BASE
+========================== */
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #2B2B2B; /* Gris oscuro */
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+  color: #2B2B2B;
+}
+
+/* ==========================
+   COLORES DE MARCA
+   Terracota y Azul Colonial
+========================== */
+:root {
+  --color-primario: #C86A3A; /* Terracota */
+  --color-secundario: #2F4A7E; /* Azul Colonial */
+  --color-fondo-claro: #F7F7F7;
+  --color-texto: #2B2B2B;
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+.navbar {
+  background-color: white !important;
+  font-weight: 500;
+}
+.navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: var(--color-primario) !important;
+}
+.nav-link {
+  color: var(--color-texto) !important;
+  transition: color 0.3s;
+}
+.nav-link:hover {
+  color: var(--color-primario) !important;
+}
+.btn-primary {
+  background-color: var(--color-primario);
+  border-color: var(--color-primario);
+}
+.btn-primary:hover {
+  background-color: #a45129; /* Terracota más oscuro */
+  border-color: #a45129;
+}
+
+/* ==========================
+   HERO
+========================== */
+#hero {
+  background: url('../img/fachada.jpg') no-repeat center center/cover;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+#hero .btn {
+  margin-top: 20px;
+}
+
+/* ==========================
+   SECCIONES
+========================== */
+section {
+  padding: 60px 0;
+}
+section h2 {
+  color: var(--color-secundario);
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+/* ==========================
+   SERVICIOS
+========================== */
+#servicios i {
+  color: var(--color-primario);
+}
+#servicios h5 {
+  font-weight: 600;
+  margin-top: 15px;
+}
+#servicios p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+.footer {
+  background-color: var(--color-secundario);
+  color: #fff;
+  font-size: 0.95rem;
+}
+.footer-logo {
+  max-width: 140px;
+  height: auto;
+}
+.footer a.footer-link,
+.footer a.footer-legal,
+.footer a.footer-social {
+  color: #ffffff;
+  opacity: 0.9;
+  text-decoration: none;
+  transition: opacity .2s ease, color .2s ease, text-decoration-color .2s ease;
+}
+.footer a.footer-link:hover,
+.footer a.footer-legal:hover,
+.footer a.footer-social:hover {
+  opacity: 1;
+  color: #ffffff;
+  text-decoration: underline;
+  text-decoration-color: rgba(255,255,255,.8);
+}
+.footer-divider {
+  border-color: rgba(255,255,255,.15);
+}
+.footer h6 {
+  letter-spacing: .04em;
+}
+/* ==========================
+   HABITACIONES (tarjetas y modales)
+========================== */
+#habitaciones .card-title {
+  color: var(--color-secundario);
+  font-weight: 700;
+}
+#habitaciones .card ul {
+  font-size: 0.95rem;
+  color: #555;
+}
+#habitaciones .card img {
+  object-fit: cover;
+  height: 180px; /* Ajusta si tus fotos tienen otra proporción */
+}
+
+.modal-content {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.modal .btn-close {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  z-index: 2;
+}
+.carousel-item img {
+  max-height: 70vh;         /* Evita que la foto gigante desborde */
+  object-fit: cover;
+}
+
+/* ==========================
+   CONTACTO
+========================== */
+.contact-card {
+  background: var(--color-fondo-claro);
+  border-left: 5px solid var(--color-primario);
+  border-radius: 10px;
+}
+
+#contacto .social-link {
+  color: var(--color-texto);
+  opacity: 0.85;
+  transition: opacity .2s ease, color .2s ease;
+}
+#contacto .social-link:hover {
+  color: var(--color-primario);
+  opacity: 1;
+}
+
+.map-embed {
+  border-radius: 10px;
+}
+
+/* Botón flotante de WhatsApp (opcional) */
+.whatsapp-float {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  background: #25D366; /* verde WhatsApp */
+  color: #fff;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+  box-shadow: 0 8px 18px rgba(0,0,0,.2);
+  z-index: 1030; /* por encima del contenido */
+}
+.whatsapp-float:hover {
+  color: #fff;
+  filter: brightness(0.95);
+}
+
+/* ==========================
+   GALERÍA
+========================== */
+#galeria .gallery-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform .35s ease, box-shadow .35s ease;
+  display: block;
+}
+#galeria a:hover .gallery-img {
+  transform: scale(1.02);
+  box-shadow: 0 10px 26px rgba(0,0,0,.15);
+}
+
+/* Responsivo: ajustar altura en pantallas pequeñas */
+@media (max-width: 576px) {
+  #galeria .gallery-img {
+    height: 180px;
+  }
+}
