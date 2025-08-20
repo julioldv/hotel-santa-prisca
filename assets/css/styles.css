@@ -224,3 +224,66 @@ section h2 {
     height: 180px;
   }
 }
+
+/* ==========================
+   NAVBAR mejorado
+========================== */
+#mainNav {
+  transition: box-shadow .25s ease, padding .25s ease, background-color .25s ease;
+  padding: .6rem 0;
+  background-color: #fff !important;
+  border-bottom: 1px solid rgba(0,0,0,.05);
+}
+#mainNav.navbar-scrolled {
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+  padding: .35rem 0;
+}
+.brand-logo {
+  width: 34px; height: 34px; object-fit: contain;
+}
+.brand-text {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--color-primario);
+}
+.navbar .nav-link.active {
+  color: var(--color-primario) !important;
+}
+
+/* Ajuste de anclas para que no queden ocultas tras la navbar */
+section { scroll-margin-top: 90px; }
+
+/* ==========================
+   HERO mejorado
+========================== */
+.hero {
+  position: relative;
+  min-height: 92vh;              /* ocupa casi toda la altura de la ventana */
+  background: url('../img/fachada.jpg') no-repeat center center/cover;
+  color: #fff;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.35));
+}
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  letter-spacing: .5px;
+  text-shadow: 0 2px 6px rgba(0,0,0,.45);
+  font-size: clamp(2.2rem, 5vw, 4.2rem);
+}
+.hero-subtitle {
+  margin: .75rem auto 1.5rem;
+  max-width: 720px;
+  font-size: clamp(1rem, 2.2vw, 1.35rem);
+  text-shadow: 0 2px 6px rgba(0,0,0,.45);
+}
+.btn-outline-light:hover {
+  color: #fff;
+}
+
+/* En móviles, da un poco más de espacio arriba del hero */
+@media (max-width: 576px) {
+  .hero { min-height: 86vh; }
+}

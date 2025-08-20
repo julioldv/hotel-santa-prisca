@@ -21,42 +21,56 @@
   <!-- Estilos personalizados -->
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body>
-  <!-- NAVBAR -->
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="#hero">Hotel Santa Prisca</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80" tabindex="0">
+    <!-- NAVBAR -->
+    <header>
+    <nav id="mainNav" class="navbar navbar-expand-lg fixed-top bg-white">
+        <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#hero">
+            <img src="assets/img/logo.png" alt="Hotel Santa Prisca" class="brand-logo" onerror="this.style.display='none'">
+            <span class="brand-text">Hotel Santa Prisca</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Menú">
+            <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="navbar-nav">
+            <ul class="navbar-nav align-items-lg-center">
             <li class="nav-item"><a class="nav-link" href="#hero">Inicio</a></li>
             <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
             <li class="nav-item"><a class="nav-link" href="#habitaciones">Habitaciones</a></li>
             <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
             <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
             <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-          </ul>
-          <a href="https://wa.me/52XXXXXXXXXX" target="_blank" class="btn btn-primary ms-3">
+            </ul>
+            <a href="https://wa.me/52XXXXXXXXXX"
+            target="_blank" class="btn btn-primary ms-lg-3 mt-3 mt-lg-0">
             Reservar <i class="bi bi-whatsapp"></i>
-          </a>
+            </a>
         </div>
-      </div>
+        </div>
     </nav>
-  </header>
+    </header>
 
-  <!-- HERO -->
-  <section id="hero" class="vh-100 d-flex align-items-center justify-content-center bg-light text-center">
-    <div class="container">
-      <h1 class="display-4 fw-bold">Hotel Santa Prisca</h1>
-      <p class="lead">Un rincón colonial en el corazón de Taxco</p>
-      <a href="https://wa.me/52XXXXXXXXXX" target="_blank" class="btn btn-primary btn-lg">
-        Reservar por WhatsApp <i class="bi bi-whatsapp"></i>
-      </a>
+    <!-- HERO -->
+    <section id="hero" class="hero d-flex align-items-center">
+    <div class="hero-overlay"></div>
+    <div class="container position-relative text-center">
+        <h1 class="hero-title">Hotel Santa Prisca</h1>
+        <p class="hero-subtitle">Un rincón colonial en el corazón de Taxco</p>
+        <div class="d-flex gap-2 justify-content-center flex-wrap">
+        <a href="https://wa.me/52XXXXXXXXXX"
+            target="_blank" class="btn btn-primary btn-lg">
+            Reservar por WhatsApp <i class="bi bi-whatsapp"></i>
+        </a>
+        <a href="#habitaciones" class="btn btn-outline-light btn-lg">
+            Ver habitaciones
+        </a>
+        </div>
     </div>
-  </section>
+    </section>
 
   <!-- NOSOTROS -->
   <section id="nosotros" class="py-5">
