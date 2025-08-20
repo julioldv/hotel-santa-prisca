@@ -19,7 +19,7 @@ h1, h2, h3, h4 {
    Terracota y Azul Colonial
 ========================== */
 :root {
-  --color-primario: #C86A3A; /* Terracota */
+  --color-primario: #C89200;      /* Amarillo ámbar (oscuro para buen contraste con blanco) */
   --color-secundario: #2F4A7E; /* Azul Colonial */
   --color-fondo-claro: #F7F7F7;
   --color-texto: #2B2B2B;
@@ -47,10 +47,11 @@ h1, h2, h3, h4 {
 .btn-primary {
   background-color: var(--color-primario);
   border-color: var(--color-primario);
+  color: #fff; /* texto blanco sobre amarillo oscuro */
 }
 .btn-primary:hover {
-  background-color: #a45129; /* Terracota más oscuro */
-  border-color: #a45129;
+  background-color: #A87500;   /* un poco más oscuro */
+  border-color: #A87500;
 }
 
 /* ==========================
