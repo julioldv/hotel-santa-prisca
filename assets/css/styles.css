@@ -278,6 +278,7 @@ section { scroll-margin-top: 90px; }
   max-width: 720px;
   font-size: clamp(1rem, 2.2vw, 1.35rem);
   text-shadow: 0 2px 6px rgba(0,0,0,.45);
+
 }
 .btn-outline-light:hover {
   color: #fff;
@@ -286,4 +287,49 @@ section { scroll-margin-top: 90px; }
 /* En móviles, da un poco más de espacio arriba del hero */
 @media (max-width: 576px) {
   .hero { min-height: 86vh; }
+}
+
+/* HERO: colores del texto */
+#hero .hero-title { 
+  color: #fff;           /* blanco */ 
+  text-shadow: 0 2px 6px rgba(0,0,0,.45); /* opcional, mejora lectura */
+}
+#hero .hero-subtitle { 
+  color: #f5f5f5;        /* opcional */
+}
+
+/* ==========================
+   NOSOTROS
+========================== */
+.about-list li {
+  margin-bottom: .5rem;
+  color: #555;
+}
+.about-img-wrapper {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.about-img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+}
+.about-badge {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  background: rgba(0,0,0,.55);
+  color: #fff;
+  padding: .4rem .7rem;
+  border-radius: 999px;
+  font-size: .95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  backdrop-filter: blur(2px);
+}
+@media (max-width: 576px){
+  .about-img { height: 280px; }
 }
