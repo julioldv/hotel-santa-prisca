@@ -130,6 +130,8 @@ section h2 {
 /* ==========================
    HABITACIONES (tarjetas y modales)
 ========================== */
+#habitaciones .card{ transition: transform .2s ease, box-shadow .2s ease; }
+#habitaciones .card:hover{ transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,.12); }
 #habitaciones .card-title {
   color: var(--color-secundario);
   font-weight: 700;
@@ -140,7 +142,7 @@ section h2 {
 }
 #habitaciones .card img {
   object-fit: cover;
-  height: 180px; /* Ajusta si tus fotos tienen otra proporción */
+  height: 180px; /* Ajustar si las fotos tienen otra proporción */
 }
 
 .modal-content {
