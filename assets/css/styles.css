@@ -29,25 +29,31 @@ h1, h2, h3, h4 {
    NAVBAR
 ========================== */
 .navbar {
-  background-color: white !important;
+  background-color: #fff !important;
   font-weight: 500;
 }
+
+/* La marca ahora es solo el logo */
 .navbar-brand {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
-  color: var(--color-primario) !important;
+  display: flex;
+  align-items: center;
+  padding: 0;
 }
+
+/* Links del menú */
 .nav-link {
   color: var(--color-texto) !important;
-  transition: color 0.3s;
+  transition: color .3s;
 }
 .nav-link:hover {
   color: var(--color-primario) !important;
 }
+
+/* Botón CTA */
 .btn-primary {
   background-color: var(--color-primario);
   border-color: var(--color-primario);
-  color: #fff; /* texto blanco sobre amarillo oscuro */
+  color: #fff; /* texto blanco sobre amarillo */
 }
 .btn-primary:hover {
   background-color: #A87500;   /* un poco más oscuro */
@@ -101,9 +107,13 @@ section h2 {
   color: #fff;
   font-size: 0.95rem;
 }
+/* Footer: logo más grande y responsivo */
 .footer-logo {
-  max-width: 140px;
+  max-width: clamp(160px, 18vw, 240px);  /* antes: ~140px */
   height: auto;
+}
+@media (max-width: 576px){
+  .footer-logo { max-width: 180px; }     /* cómodo en móvil */
 }
 .footer a.footer-link,
 .footer a.footer-legal,
@@ -241,14 +251,39 @@ section h2 {
   box-shadow: 0 8px 20px rgba(0,0,0,.08);
   padding: .35rem 0;
 }
-.brand-logo {
-  width: 34px; height: 34px; object-fit: contain;
+
+/* ===== Logo en navbar (más grande) ===== */
+.brand-logo{
+  display:block;
+  height:42px;         /* base (móvil) */
+  width:auto;
+  object-fit:contain;
 }
-.brand-text {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  color: var(--color-primario);
+
+/* quita el tope que lo estaba limitando */
+.only-logo{ max-height:none; }
+
+/* tablet */
+@media (min-width:576px){
+  .brand-logo{ height:50px; }
 }
+
+/* escritorio */
+@media (min-width:992px){
+  .brand-logo{ height:60px; }
+}
+
+/* al hacer scroll, que se encoja un poco */
+#mainNav.navbar-scrolled .brand-logo{
+  height:46px;
+}
+
+/* un pelín más de aire para la barra (opcional) */
+#mainNav{ padding:.7rem 0; }
+#mainNav.navbar-scrolled{ padding:.4rem 0; }
+
+
+/* Link activo del menú */
 .navbar .nav-link.active {
   color: var(--color-primario) !important;
 }
