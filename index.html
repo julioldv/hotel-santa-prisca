@@ -25,6 +25,27 @@
   <link rel="icon" type="image/png" href="assets/img/favicon-32.png" sizes="32x32">
 
 </head>
+<!-- Modal: Aviso de Privacidad -->
+<div class="modal fade" id="avisoModal" tabindex="-1" aria-labelledby="avisoTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl"><div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="avisoTitle">Aviso de privacidad</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+    </div>
+    <div class="modal-body p-0">
+      <div class="ratio ratio-16x9">
+        <iframe src="assets/docs/aviso-privacidad.pdf#view=FitH"
+                title="Aviso de privacidad (PDF)"
+                loading="lazy" style="border:0;"></iframe>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="assets/docs/aviso-privacidad.pdf" class="btn btn-primary" download>Descargar PDF</a>
+      <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+    </div>
+  </div></div>
+</div>
+
 <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80" tabindex="0">
     <!-- NAVBAR -->
     <header>
@@ -652,7 +673,10 @@
         <div class="d-flex flex-column flex-md-row justify-content-between align-items-center py-3 small">
         <div>© <span id="year"></span> Hotel Santa Prisca. Todos los derechos reservados.</div>
         <div class="d-flex gap-3">
-            <a href="#" class="footer-legal">Aviso de privacidad</a>
+            <a href="#" class="footer-legal"
+                data-bs-toggle="modal" data-bs-target="#avisoModal">
+                Aviso de privacidad
+            </a>
             <a href="#" class="footer-legal">Términos y condiciones</a>
         </div>
         </div>

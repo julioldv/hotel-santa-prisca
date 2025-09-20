@@ -371,3 +371,10 @@ section { scroll-margin-top: 90px; }
 @media (max-width: 576px){
   .about-img { height: 280px; }
 }
+
+/* Modal aviso de privacidad */
+/* Que el PDF aproveche más alto en pantallas grandes */
+@media (min-width: 992px){
+  #avisoModal .modal-body { height: 80vh; }
+  #avisoModal .ratio { height: 100%; }
+}
