@@ -125,6 +125,7 @@ section h2 {
 .footer h6 {
   letter-spacing: .04em;
 }
+
 /* ==========================
    HABITACIONES (tarjetas y modales)
 ========================== */
@@ -138,9 +139,12 @@ section h2 {
   font-size: 0.95rem;
   color: #555;
 }
-#habitaciones .card img {
+/* (Reemplazo) Imagen de tarjeta con ratio consistente */
+#habitaciones .card-img-top{
+  width: 100%;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
-  height: 180px; /* Ajustar si las fotos tienen otra proporción */
+  height: auto; /* preferimos ratio en vez de altura fija */
 }
 
 .modal-content {
@@ -206,23 +210,27 @@ section h2 {
 /* ==========================
    GALERÍA
 ========================== */
+/* (Reemplazo) Imagen de galería con ratio consistente */
 #galeria .gallery-img {
   width: 100%;
-  height: 220px;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: 10px;
   transition: transform .35s ease, box-shadow .35s ease;
   display: block;
+  height: auto; /* preferimos ratio */
 }
 #galeria a:hover .gallery-img {
   transform: scale(1.02);
   box-shadow: 0 10px 26px rgba(0,0,0,.15);
 }
 
-/* Responsivo: ajustar altura en pantallas pequeñas */
-@media (max-width: 576px) {
-  #galeria .gallery-img {
-    height: 180px;
+/* Fallback para navegadores sin aspect-ratio */
+@supports not (aspect-ratio: 1 / 1){
+  #habitaciones .card-img-top{ height: 180px; }
+  #galeria .gallery-img{ height: 220px; }
+  @media (max-width: 576px){
+    #galeria .gallery-img{ height: 180px; }
   }
 }
 
@@ -270,7 +278,6 @@ section h2 {
 #mainNav{ padding:.7rem 0; }
 #mainNav.navbar-scrolled{ padding:.4rem 0; }
 
-
 /* Link activo del menú */
 .navbar .nav-link.active {
   color: var(--color-primario) !important;
@@ -312,7 +319,6 @@ section { scroll-margin-top: 90px; }
 @media (max-width: 576px) {
   .hero { min-height: 86vh; }
 }
-
 
 /* ==========================
    NOSOTROS
