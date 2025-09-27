@@ -1,12 +1,9 @@
-// === Año automático en el footer ===
 document.addEventListener('DOMContentLoaded', () => {
+  // Año automático en el footer
   const y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
-});
 
-// === Inicialización general al cargar el DOM ===
-document.addEventListener('DOMContentLoaded', () => {
-  // --- Galería (GLightbox) ---
+  // Galería (GLightbox)
   if (window.GLightbox) {
     GLightbox({
       selector: '.glightbox',
@@ -16,30 +13,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- ScrollSpy: init + refresh ---
+  // ScrollSpy: init + refresh (coincide con section{ scroll-margin-top: 90px; })
   const body = document.body;
-
-  // Asegura que el offset del data-API sea 90 (coincide con CSS: scroll-margin-top: 90px)
   if (body.getAttribute('data-bs-offset') !== '90') {
     body.setAttribute('data-bs-offset', '90');
   }
-
-  // Usa la instancia creada por data-attributes o créala si no existe
   let ss = (window.bootstrap && bootstrap.ScrollSpy)
     ? bootstrap.ScrollSpy.getInstance(body)
     : null;
-
   if (window.bootstrap && bootstrap.ScrollSpy && !ss) {
     ss = new bootstrap.ScrollSpy(body, { target: '#mainNav', offset: 90 });
   }
-
   const refreshScrollSpy = () => { try { ss && ss.refresh(); } catch (e) {} };
-
-  // Recalcula al terminar de cargar (imágenes/fuentes) y al redimensionar
   window.addEventListener('load', refreshScrollSpy);
   window.addEventListener('resize', refreshScrollSpy);
-
-  // Si la navbar cambia altura al hacer scroll, refresca de forma contenida
   let ticking = false;
   window.addEventListener('scroll', () => {
     if (ticking) return;
@@ -47,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => { refreshScrollSpy(); ticking = false; }, 250);
   });
 
-  // --- Skip-link: enfocar <main> al usarlo ---
+  // Skip-link: enfocar <main> al usarlo
   const skip = document.querySelector('.skip-link');
   if (skip) {
     skip.addEventListener('click', () => {
@@ -55,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- Cerrar menú móvil al hacer clic en un enlace ---
+  // Cerrar menú móvil al hacer clic en un enlace
   document.querySelectorAll('#navbarNav .nav-link').forEach(link => {
     link.addEventListener('click', () => {
       const navbar = document.getElementById('navbarNav');
@@ -64,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- (Opcional) Suavizar el scroll para anclas internas ---
+  // Suavizar el scroll para anclas internas
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const id = a.getAttribute('href');
@@ -73,15 +60,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (el) {
           e.preventDefault();
           el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          // Si quieres actualizar la URL sin saltos visibles:
-          // history.pushState(null, '', id);
+          // Si quieres actualizar la URL: history.pushState(null, '', id);
         }
       }
     });
   });
 });
 
-// === Navbar: aplicar estilo al hacer scroll (sombra/altura) ===
+// Navbar: sombra y altura al hacer scroll
 document.addEventListener('scroll', () => {
   const nav = document.getElementById('mainNav');
   if (!nav) return;

@@ -3,12 +3,11 @@
 ========================== */
 body {
   font-family: 'Montserrat', sans-serif;
-  color: #2B2B2B; /* Gris oscuro */
+  color: #2B2B2B;
   line-height: 1.6;
   margin: 0;
   padding: 0;
 }
-
 h1, h2, h3, h4 {
   font-family: 'Playfair Display', serif;
   color: #2B2B2B;
@@ -16,10 +15,9 @@ h1, h2, h3, h4 {
 
 /* ==========================
    COLORES DE MARCA
-   Amarillo ambar y Azul Colonial
 ========================== */
 :root {
-  --color-primario: #C89200;      /* Amarillo ámbar (oscuro para buen contraste con blanco) */
+  --color-primario: #C89200;   /* Ámbar */
   --color-secundario: #2F4A7E; /* Azul Colonial */
   --color-fondo-claro: #F7F7F7;
   --color-texto: #2B2B2B;
@@ -28,139 +26,134 @@ h1, h2, h3, h4 {
 /* ==========================
    NAVBAR
 ========================== */
-.navbar {
-  background-color: #fff !important;
-  font-weight: 500;
-}
-
-/* La marca ahora es solo el logo */
-.navbar-brand {
-  display: flex;
-  align-items: center;
-  padding: 0;
-}
-
-/* Links del menú */
-.nav-link {
-  color: var(--color-texto) !important;
-  transition: color .3s;
-}
-.nav-link:hover {
-  color: var(--color-primario) !important;
-}
-
-/* Botón CTA */
+.navbar { background-color: #fff !important; font-weight: 500; }
+.navbar-brand { display: flex; align-items: center; padding: 0; }
+.nav-link { color: var(--color-texto) !important; transition: color .3s; }
+.nav-link:hover { color: var(--color-primario) !important; }
 .btn-primary {
   background-color: var(--color-primario);
   border-color: var(--color-primario);
-  color: #fff; /* texto blanco sobre amarillo */
+  color: #fff;
 }
 .btn-primary:hover {
-  background-color: #A87500;   /* un poco más oscuro */
+  background-color: #A87500;
   border-color: #A87500;
 }
+
+/* Navbar mejorado */
+#mainNav {
+  transition: box-shadow .25s ease, padding .25s ease, background-color .25s ease;
+  padding: .7rem 0;
+  background-color: #fff !important;
+  border-bottom: 1px solid rgba(0,0,0,.05);
+}
+#mainNav.navbar-scrolled { box-shadow: 0 8px 20px rgba(0,0,0,.08); padding: .4rem 0; }
+
+/* Logo en navbar (fluido) */
+.brand-logo { display:block; height:42px; width:auto; object-fit:contain; }
+.only-logo{ max-height:none; }
+@media (min-width:576px){ .brand-logo{ height:50px; } }
+@media (min-width:992px){ .brand-logo{ height:60px; } }
+#mainNav.navbar-scrolled .brand-logo{ height:46px; }
+
+/* Link activo del menú */
+.navbar .nav-link.active { color: var(--color-primario) !important; }
 
 /* ==========================
    SECCIONES
 ========================== */
-section {
-  padding: 60px 0;
-}
-section h2 {
-  color: var(--color-secundario);
-  margin-bottom: 30px;
-  font-weight: 700;
-}
+section { padding: 60px 0; scroll-margin-top: 90px; }
+section h2 { color: var(--color-secundario); margin-bottom: 30px; font-weight: 700; }
 
 /* ==========================
-   SERVICIOS
+   HERO
 ========================== */
-#servicios i {
-  color: var(--color-secundario);
-}
-#servicios h5 {
-  font-weight: 600;
-  margin-top: 15px;
-}
-#servicios p {
-  font-size: 0.95rem;
-  color: #555;
-}
-
-/* ==========================
-   FOOTER
-========================== */
-.footer {
-  background-color: var(--color-secundario);
+.hero {
+  position: relative;
+  min-height: 92vh;
+  background: url('../img/fachada.jpg') no-repeat center center/cover;
   color: #fff;
-  font-size: 0.95rem;
 }
-/* Footer: logo más grande y responsivo */
-.footer-logo {
-  max-width: clamp(160px, 18vw, 240px);  /* antes: ~140px */
-  height: auto;
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.35)); }
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  letter-spacing: .5px;
+  text-shadow: 0 2px 6px rgba(0,0,0,.45);
+  font-size: clamp(2.2rem, 5vw, 4.2rem);
+  color: #fff;
 }
-@media (max-width: 576px){
-  .footer-logo { max-width: 180px; }     /* cómodo en móvil */
+.hero-subtitle {
+  margin: .75rem auto 1.5rem; max-width: 720px;
+  font-size: clamp(1rem, 2.2vw, 1.35rem);
+  text-shadow: 0 2px 6px rgba(0,0,0,.45);
+  color: #f5f5f5;
 }
-.footer a.footer-link,
-.footer a.footer-legal,
-.footer a.footer-social {
-  color: #ffffff;
-  opacity: 0.9;
-  text-decoration: none;
-  transition: opacity .2s ease, color .2s ease, text-decoration-color .2s ease;
+.hero .btn { margin-top: 20px; }
+@media (max-width: 576px) { .hero { min-height: 86vh; } }
+
+/* ==========================
+   NOSOTROS
+========================== */
+.about-list li { margin-bottom: .5rem; color: #555; }
+.about-img-wrapper { position: relative; border-radius: 14px; overflow: hidden; }
+.about-img { width: 100%; height: 360px; object-fit: cover; display: block; }
+.about-badge {
+  position: absolute; left: 12px; bottom: 12px;
+  background: rgba(0,0,0,.55); color: #fff; padding: .4rem .7rem;
+  border-radius: 999px; font-size: .95rem; display: inline-flex; align-items: center; gap: .45rem;
+  backdrop-filter: blur(2px);
 }
-.footer a.footer-link:hover,
-.footer a.footer-legal:hover,
-.footer a.footer-social:hover {
-  opacity: 1;
-  color: #ffffff;
-  text-decoration: underline;
-  text-decoration-color: rgba(255,255,255,.8);
-}
-.footer-divider {
-  border-color: rgba(255,255,255,.15);
-}
-.footer h6 {
-  letter-spacing: .04em;
-}
+@media (max-width: 576px){ .about-img { height: 280px; } }
 
 /* ==========================
    HABITACIONES (tarjetas y modales)
 ========================== */
 #habitaciones .card{ transition: transform .2s ease, box-shadow .2s ease; }
 #habitaciones .card:hover{ transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,.12); }
-#habitaciones .card-title {
-  color: var(--color-secundario);
-  font-weight: 700;
-}
-#habitaciones .card ul {
-  font-size: 0.95rem;
-  color: #555;
-}
-/* (Reemplazo) Imagen de tarjeta con ratio consistente */
+#habitaciones .card-title { color: var(--color-secundario); font-weight: 700; }
+#habitaciones .card ul { font-size: 0.95rem; color: #555; }
+
+/* Ratio consistente en imágenes de tarjetas */
 #habitaciones .card-img-top{
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  height: auto; /* preferimos ratio en vez de altura fija */
+  height: auto;
 }
 
-.modal-content {
-  border: none;
-  border-radius: 12px;
-  overflow: hidden;
-}
-.modal .btn-close {
-  position: absolute;
-  right: 8px;
-  top: 8px;
-  z-index: 2;
-}
-.carousel-item img {
-  max-height: 70vh;         /* Evita que la foto gigante desborde */
+.modal-content { border: none; border-radius: 12px; overflow: hidden; }
+.modal .btn-close { position: absolute; right: 8px; top: 8px; z-index: 2; }
+.carousel-item img { max-height: 70vh; object-fit: cover; }
+
+/* ==========================
+   SERVICIOS
+========================== */
+#servicios i { color: var(--color-secundario); }
+#servicios h5 { font-weight: 600; margin-top: 15px; }
+#servicios p { font-size: 0.95rem; color: #555; }
+
+/* ==========================
+   GALERÍA
+========================== */
+#galeria .gallery-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
+  border-radius: 10px;
+  transition: transform .35s ease, box-shadow .35s ease;
+  display: block;
+  height: auto;
+}
+#galeria a:hover .gallery-img { transform: scale(1.02); box-shadow: 0 10px 26px rgba(0,0,0,.15); }
+
+/* Fallback si no hay soporte de aspect-ratio */
+@supports not (aspect-ratio: 1 / 1){
+  #habitaciones .card-img-top{ height: 180px; }
+  #galeria .gallery-img{ height: 220px; }
+  @media (max-width: 576px){
+    #galeria .gallery-img{ height: 180px; }
+  }
 }
 
 /* ==========================
@@ -171,218 +164,58 @@ section h2 {
   border-left: 5px solid var(--color-primario);
   border-radius: 10px;
 }
-
 #contacto .social-link {
   color: var(--color-texto);
   opacity: 0.85;
   transition: opacity .2s ease, color .2s ease;
 }
-#contacto .social-link:hover {
-  color: var(--color-primario);
-  opacity: 1;
-}
+#contacto .social-link:hover { color: var(--color-primario); opacity: 1; }
+.map-embed { border-radius: 10px; }
 
-.map-embed {
-  border-radius: 10px;
-}
-
-/* Botón flotante de WhatsApp (opcional) */
+/* Botón flotante de WhatsApp */
 .whatsapp-float {
-  position: fixed;
-  right: 16px;
-  bottom: 16px;
-  background: #25D366; /* verde WhatsApp */
-  color: #fff;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-size: 1.6rem;
-  box-shadow: 0 8px 18px rgba(0,0,0,.2);
-  z-index: 1030; /* por encima del contenido */
+  position: fixed; right: 16px; bottom: 16px;
+  background: #25D366; color: #fff; width: 56px; height: 56px; border-radius: 50%;
+  display: grid; place-items: center; font-size: 1.6rem; box-shadow: 0 8px 18px rgba(0,0,0,.2);
+  z-index: 1030;
 }
-.whatsapp-float:hover {
-  color: #fff;
-  filter: brightness(0.95);
-}
+.whatsapp-float:hover { color: #fff; filter: brightness(0.95); }
 
 /* ==========================
-   GALERÍA
+   FOOTER
 ========================== */
-/* (Reemplazo) Imagen de galería con ratio consistente */
-#galeria .gallery-img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-radius: 10px;
-  transition: transform .35s ease, box-shadow .35s ease;
-  display: block;
-  height: auto; /* preferimos ratio */
+.footer { background-color: var(--color-secundario); color: #fff; font-size: 0.95rem; }
+.footer-logo { max-width: clamp(160px, 18vw, 240px); height: auto; }
+@media (max-width: 576px){ .footer-logo { max-width: 180px; } }
+.footer a.footer-link,
+.footer a.footer-legal,
+.footer a.footer-social {
+  color: #ffffff; opacity: 0.9; text-decoration: none;
+  transition: opacity .2s ease, color .2s ease, text-decoration-color .2s ease;
 }
-#galeria a:hover .gallery-img {
-  transform: scale(1.02);
-  box-shadow: 0 10px 26px rgba(0,0,0,.15);
+.footer a.footer-link:hover,
+.footer a.footer-legal:hover,
+.footer a.footer-social:hover {
+  opacity: 1; color: #ffffff; text-decoration: underline; text-decoration-color: rgba(255,255,255,.8);
 }
-
-/* Fallback para navegadores sin aspect-ratio */
-@supports not (aspect-ratio: 1 / 1){
-  #habitaciones .card-img-top{ height: 180px; }
-  #galeria .gallery-img{ height: 220px; }
-  @media (max-width: 576px){
-    #galeria .gallery-img{ height: 180px; }
-  }
-}
+.footer-divider { border-color: rgba(255,255,255,.15); }
+.footer h6 { letter-spacing: .04em; }
 
 /* ==========================
-   NAVBAR mejorado
+   MODAL PDF (aviso)
 ========================== */
-#mainNav {
-  transition: box-shadow .25s ease, padding .25s ease, background-color .25s ease;
-  padding: .6rem 0;
-  background-color: #fff !important;
-  border-bottom: 1px solid rgba(0,0,0,.05);
-}
-#mainNav.navbar-scrolled {
-  box-shadow: 0 8px 20px rgba(0,0,0,.08);
-  padding: .35rem 0;
-}
-
-/* ===== Logo en navbar (más grande) ===== */
-.brand-logo{
-  display:block;
-  height:42px;         /* base (móvil) */
-  width:auto;
-  object-fit:contain;
-}
-
-/* quita el tope que lo estaba limitando */
-.only-logo{ max-height:none; }
-
-/* tablet */
-@media (min-width:576px){
-  .brand-logo{ height:50px; }
-}
-
-/* escritorio */
-@media (min-width:992px){
-  .brand-logo{ height:60px; }
-}
-
-/* al hacer scroll, que se encoja un poco */
-#mainNav.navbar-scrolled .brand-logo{
-  height:46px;
-}
-
-/* un pelín más de aire para la barra (opcional) */
-#mainNav{ padding:.7rem 0; }
-#mainNav.navbar-scrolled{ padding:.4rem 0; }
-
-/* Link activo del menú */
-.navbar .nav-link.active {
-  color: var(--color-primario) !important;
-}
-
-/* Ajuste de anclas para que no queden ocultas tras la navbar */
-section { scroll-margin-top: 90px; }
-
-/* ==========================
-   HERO (único)
-========================== */
-.hero {
-  position: relative;
-  min-height: 92vh;                      /* ocupa casi toda la altura */
-  background: url('../img/fachada.jpg') no-repeat center center/cover;
-  color: #fff;
-}
-.hero-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.35));
-}
-.hero-title {
-  font-family: 'Playfair Display', serif;
-  font-weight: 800;
-  letter-spacing: .5px;
-  text-shadow: 0 2px 6px rgba(0,0,0,.45);
-  font-size: clamp(2.2rem, 5vw, 4.2rem);
-  color: #fff;
-}
-.hero-subtitle {
-  margin: .75rem auto 1.5rem;
-  max-width: 720px;
-  font-size: clamp(1rem, 2.2vw, 1.35rem);
-  text-shadow: 0 2px 6px rgba(0,0,0,.45);
-  color: #f5f5f5;                         /* gris muy claro para contraste */
-}
-.hero .btn { margin-top: 20px; }          /* conserva el margen de botones */
-
-@media (max-width: 576px) {
-  .hero { min-height: 86vh; }
-}
-
-/* ==========================
-   NOSOTROS
-========================== */
-.about-list li {
-  margin-bottom: .5rem;
-  color: #555;
-}
-.about-img-wrapper {
-  position: relative;
-  border-radius: 14px;
-  overflow: hidden;
-}
-.about-img {
-  width: 100%;
-  height: 360px;
-  object-fit: cover;
-  display: block;
-}
-.about-badge {
-  position: absolute;
-  left: 12px;
-  bottom: 12px;
-  background: rgba(0,0,0,.55);
-  color: #fff;
-  padding: .4rem .7rem;
-  border-radius: 999px;
-  font-size: .95rem;
-  display: inline-flex;
-  align-items: center;
-  gap: .45rem;
-  backdrop-filter: blur(2px);
-}
-@media (max-width: 576px){
-  .about-img { height: 280px; }
-}
-
-/* Modal aviso de privacidad */
-/* Que el PDF aproveche más alto en pantallas grandes */
 @media (min-width: 992px){
   #avisoModal .modal-body { height: 80vh; }
   #avisoModal .ratio { height: 100%; }
 }
 
 /* ==========================
-   ACCESIBILIDAD: Skip-link
+   ACCESIBILIDAD
 ========================== */
 .skip-link{
-  position: absolute;
-  left: -9999px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+  position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
 }
 .skip-link:focus{
-  left: 16px;
-  top: 16px;
-  width: auto;
-  height: auto;
-  padding: .5rem .75rem;
-  background: #000;
-  color: #fff;
-  z-index: 1100;       /* por encima de la navbar */
-  border-radius: 8px;
-  text-decoration: none;
+  left: 16px; top: 16px; width: auto; height: auto; padding: .5rem .75rem;
+  background: #000; color: #fff; z-index: 1100; border-radius: 8px; text-decoration: none;
 }
