@@ -61,18 +61,6 @@ h1, h2, h3, h4 {
 }
 
 /* ==========================
-   HERO
-========================== */
-#hero {
-  background: url('../img/fachada.jpg') no-repeat center center/cover;
-  color: white;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
-}
-#hero .btn {
-  margin-top: 20px;
-}
-
-/* ==========================
    SECCIONES
 ========================== */
 section {
@@ -292,11 +280,11 @@ section h2 {
 section { scroll-margin-top: 90px; }
 
 /* ==========================
-   HERO mejorado
+   HERO (único)
 ========================== */
 .hero {
   position: relative;
-  min-height: 92vh;              /* ocupa casi toda la altura de la ventana */
+  min-height: 92vh;                      /* ocupa casi toda la altura */
   background: url('../img/fachada.jpg') no-repeat center center/cover;
   color: #fff;
 }
@@ -310,31 +298,21 @@ section { scroll-margin-top: 90px; }
   letter-spacing: .5px;
   text-shadow: 0 2px 6px rgba(0,0,0,.45);
   font-size: clamp(2.2rem, 5vw, 4.2rem);
+  color: #fff;
 }
 .hero-subtitle {
   margin: .75rem auto 1.5rem;
   max-width: 720px;
   font-size: clamp(1rem, 2.2vw, 1.35rem);
   text-shadow: 0 2px 6px rgba(0,0,0,.45);
-
+  color: #f5f5f5;                         /* gris muy claro para contraste */
 }
-.btn-outline-light:hover {
-  color: #fff;
-}
+.hero .btn { margin-top: 20px; }          /* conserva el margen de botones */
 
-/* En móviles, da un poco más de espacio arriba del hero */
 @media (max-width: 576px) {
   .hero { min-height: 86vh; }
 }
 
-/* HERO: colores del texto */
-#hero .hero-title { 
-  color: #fff;           /* blanco */ 
-  text-shadow: 0 2px 6px rgba(0,0,0,.45); /* opcional, mejora lectura */
-}
-#hero .hero-subtitle { 
-  color: #f5f5f5;        /* opcional */
-}
 
 /* ==========================
    NOSOTROS
