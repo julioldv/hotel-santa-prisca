@@ -66,13 +66,37 @@ section { padding: 60px 0; scroll-margin-top: 90px; }
 section h2 { color: var(--color-secundario); margin-bottom: 30px; font-weight: 700; }
 
 /* ==========================
-   HERO
+   HERO (con AVIF/WebP)
 ========================== */
 .hero {
   position: relative;
   min-height: 92vh;
-  background: url('../img/fachada.jpg') no-repeat center center/cover;
+  /* Fallback JPG para navegadores sin image-set */
+  background: url('../img/fachada.jpg') no-repeat center center / cover;
   color: #fff;
+}
+
+/* Sobrescribe con AVIF/WebP si el navegador lo soporta */
+.hero {
+  background-image: image-set(
+    url('../img/fachada.avif') type('image/avif'),
+    url('../img/fachada.webp') type('image/webp'),
+    url('../img/fachada.jpg')  type('image/jpeg')
+  );
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* WebKit antiguo (Safari viejito) */
+@supports (-webkit-image-set(url("") 1x)) {
+  .hero {
+    background-image: -webkit-image-set(
+      url('../img/fachada.avif') type('image/avif'),
+      url('../img/fachada.webp') type('image/webp'),
+      url('../img/fachada.jpg')  type('image/jpeg')
+    );
+  }
 }
 .hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.35)); }
 .hero-title {
