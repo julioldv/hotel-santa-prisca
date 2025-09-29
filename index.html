@@ -675,10 +675,78 @@
       <h5 id="ttlEconomica" class="visually-hidden">Galería Habitación Económica</h5>
       <div id="carouselEconomica" class="carousel slide" data-bs-ride="carousel" aria-label="Carrusel de fotos">
         <div class="carousel-inner">
-          <div class="carousel-item active"><img src="assets/img/habitaciones/economica-1.jpg" class="d-block w-100" alt="Habitación Económica, vista general"></div>
-          <div class="carousel-item"><img src="assets/img/habitaciones/economica-2.jpg" class="d-block w-100" alt=""></div>
-          <div class="carousel-item"><img src="assets/img/habitaciones/economica-3.jpg" class="d-block w-100" alt=""></div>
+
+          <!-- Slide 1 (activo): eager + alta prioridad -->
+          <div class="carousel-item active">
+            <picture>
+              <source type="image/avif"
+                srcset="assets/img/habitaciones/economica-1-1600.avif 1600w,
+                        assets/img/habitaciones/economica-1-1200.avif 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <source type="image/webp"
+                srcset="assets/img/habitaciones/economica-1-1600.webp 1600w,
+                        assets/img/habitaciones/economica-1-1200.webp 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <img
+                src="assets/img/habitaciones/economica-1-1200.jpg"
+                srcset="assets/img/habitaciones/economica-1-1600.jpg 1600w,
+                        assets/img/habitaciones/economica-1-1200.jpg 1200w"
+                sizes="(min-width: 992px) 900px, 100vw"
+                class="d-block w-100"
+                alt="Habitación Económica - foto 1"
+                width="1600" height="1200"
+                loading="eager" fetchpriority="high" decoding="async">
+            </picture>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <picture>
+              <source type="image/avif"
+                srcset="assets/img/habitaciones/economica-2-1600.avif 1600w,
+                        assets/img/habitaciones/economica-2-1200.avif 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <source type="image/webp"
+                srcset="assets/img/habitaciones/economica-2-1600.webp 1600w,
+                        assets/img/habitaciones/economica-2-1200.webp 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <img
+                src="assets/img/habitaciones/economica-2-1200.jpg"
+                srcset="assets/img/habitaciones/economica-2-1600.jpg 1600w,
+                        assets/img/habitaciones/economica-2-1200.jpg 1200w"
+                sizes="(min-width: 992px) 900px, 100vw"
+                class="d-block w-100"
+                alt="Habitación Económica - foto 2"
+                width="1600" height="1200"
+                loading="lazy" decoding="async">
+            </picture>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item">
+            <picture>
+              <source type="image/avif"
+                srcset="assets/img/habitaciones/economica-3-1600.avif 1600w,
+                        assets/img/habitaciones/economica-3-1200.avif 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <source type="image/webp"
+                srcset="assets/img/habitaciones/economica-3-1600.webp 1600w,
+                        assets/img/habitaciones/economica-3-1200.webp 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <img
+                src="assets/img/habitaciones/economica-3-1200.jpg"
+                srcset="assets/img/habitaciones/economica-3-1600.jpg 1600w,
+                        assets/img/habitaciones/economica-3-1200.jpg 1200w"
+                sizes="(min-width: 992px) 900px, 100vw"
+                class="d-block w-100"
+                alt="Habitación Económica - foto 3"
+                width="1600" height="1200"
+                loading="lazy" decoding="async">
+            </picture>
+          </div>
+
         </div>
+
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselEconomica" data-bs-slide="prev" aria-label="Anterior"><span class="carousel-control-prev-icon"></span></button>
         <button class="carousel-control-next" type="button" data-bs-target="#carouselEconomica" data-bs-slide="next" aria-label="Siguiente"><span class="carousel-control-next-icon"></span></button>
       </div>
@@ -689,104 +757,497 @@
   </div>
 
   <!-- Estándar / Doble -->
-  <div class="modal fade" id="modalEstandar" tabindex="-1" aria-labelledby="ttlEstandar" aria-hidden="true">
+  <div class="modal fade" id="modalEstandar" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content">
       <button class="btn-close ms-auto me-2 mt-2" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-      <h5 id="ttlEstandar" class="visually-hidden">Galería Habitación Estándar / Doble</h5>
-      <div id="carouselEstandar" class="carousel slide" data-bs-ride="carousel" aria-label="Carrusel de fotos">
+
+      <!-- Autoplay desactivado -->
+      <div id="carouselEstandar" class="carousel slide" data-bs-interval="0">
         <div class="carousel-inner">
-          <div class="carousel-item active"><img src="assets/img/habitaciones/estandar-1.jpg" class="d-block w-100" alt="Habitación Estándar / Doble, vista general"></div>
-          <div class="carousel-item"><img src="assets/img/habitaciones/estandar-2.jpg" class="d-block w-100" alt=""></div>
-          <!-- <div class="carousel-item"><img src="assets/img/habitaciones/estandar-3.jpg" class="d-block w-100" alt=""></div> -->
+
+          <!-- Slide 1 (activo): eager + alta prioridad -->
+          <div class="carousel-item active">
+            <picture>
+              <source type="image/avif"
+                srcset="assets/img/habitaciones/estandar-1-1600.avif 1600w,
+                        assets/img/habitaciones/estandar-1-1200.avif 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <source type="image/webp"
+                srcset="assets/img/habitaciones/estandar-1-1600.webp 1600w,
+                        assets/img/habitaciones/estandar-1-1200.webp 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <img
+                src="assets/img/habitaciones/estandar-1-1200.jpg"
+                srcset="assets/img/habitaciones/estandar-1-1600.jpg 1600w,
+                        assets/img/habitaciones/estandar-1-1200.jpg 1200w"
+                sizes="(min-width: 992px) 900px, 100vw"
+                class="d-block w-100"
+                alt="Habitación Estándar/Doble con balcón - foto 1"
+                width="1600" height="1200"
+                loading="eager" fetchpriority="high" decoding="async">
+            </picture>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <picture>
+              <source type="image/avif"
+                srcset="assets/img/habitaciones/estandar-2-1600.avif 1600w,
+                        assets/img/habitaciones/estandar-2-1200.avif 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <source type="image/webp"
+                srcset="assets/img/habitaciones/estandar-2-1600.webp 1600w,
+                        assets/img/habitaciones/estandar-2-1200.webp 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <img
+                src="assets/img/habitaciones/estandar-2-1200.jpg"
+                srcset="assets/img/habitaciones/estandar-2-1600.jpg 1600w,
+                        assets/img/habitaciones/estandar-2-1200.jpg 1200w"
+                sizes="(min-width: 992px) 900px, 100vw"
+                class="d-block w-100"
+                alt="Habitación Estándar/Doble con balcón - foto 2"
+                width="1600" height="1200"
+                loading="lazy" decoding="async">
+            </picture>
+          </div>
+
+          <!-- (Opcional) Slide 3: descomentar cuando se tenga estandar-3 -->
+          <!--
+          <div class="carousel-item">
+            <picture>
+              <source type="image/avif"
+                srcset="assets/img/habitaciones/estandar-3-1600.avif 1600w,
+                        assets/img/habitaciones/estandar-3-1200.avif 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <source type="image/webp"
+                srcset="assets/img/habitaciones/estandar-3-1600.webp 1600w,
+                        assets/img/habitaciones/estandar-3-1200.webp 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <img
+                src="assets/img/habitaciones/estandar-3-1200.jpg"
+                srcset="assets/img/habitaciones/estandar-3-1600.jpg 1600w,
+                        assets/img/habitaciones/estandar-3-1200.jpg 1200w"
+                sizes="(min-width: 992px) 900px, 100vw"
+                class="d-block w-100"
+                alt="Habitación Estándar/Doble con balcón - foto 3"
+                width="1600" height="1200"
+                loading="lazy" decoding="async">
+            </picture>
+          </div>
+          -->
+
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselEstandar" data-bs-slide="prev" aria-label="Anterior"><span class="carousel-control-prev-icon"></span></button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselEstandar" data-bs-slide="next" aria-label="Siguiente"><span class="carousel-control-next-icon"></span></button>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselEstandar" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselEstandar" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Siguiente</span>
+        </button>
       </div>
+
       <div class="p-3 text-end">
-        <a href="https://wa.me/527621143000?text=Hola%2C%20informaci%C3%B3n%20sobre%20Habitaci%C3%B3n%20Est%C3%A1ndar%20%2F%20Doble" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Consultar por WhatsApp</a>
+        <a href="https://wa.me/527621143000?text=Hola%2C%20informaci%C3%B3n%20sobre%20Habitaci%C3%B3n%20Est%C3%A1ndar%20%2F%20Doble"
+          target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          Consultar por WhatsApp
+        </a>
       </div>
     </div></div>
   </div>
 
   <!-- Triple -->
-  <div class="modal fade" id="modalTriple" tabindex="-1" aria-labelledby="ttlTriple" aria-hidden="true">
+  <div class="modal fade" id="modalTriple" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content">
       <button class="btn-close ms-auto me-2 mt-2" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-      <h5 id="ttlTriple" class="visually-hidden">Galería Habitación Triple</h5>
-      <div id="carouselTriple" class="carousel slide" data-bs-ride="carousel" aria-label="Carrusel de fotos">
+
+      <!-- Autoplay desactivado -->
+      <div id="carouselTriple" class="carousel slide" data-bs-interval="0">
         <div class="carousel-inner">
-          <div class="carousel-item active"><img src="assets/img/habitaciones/triple-1.jpg" class="d-block w-100" alt="Habitación Triple, vista general"></div>
-          <div class="carousel-item"><img src="assets/img/habitaciones/triple-2.jpg" class="d-block w-100" alt=""></div>
-          <div class="carousel-item"><img src="assets/img/habitaciones/triple-3.jpg" class="d-block w-100" alt=""></div>
+
+          <!-- Slide 1 (activo): eager + alta prioridad -->
+          <div class="carousel-item active">
+            <picture>
+              <source type="image/avif"
+                srcset="assets/img/habitaciones/triple-1-1600.avif 1600w,
+                        assets/img/habitaciones/triple-1-1200.avif 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <source type="image/webp"
+                srcset="assets/img/habitaciones/triple-1-1600.webp 1600w,
+                        assets/img/habitaciones/triple-1-1200.webp 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <img
+                src="assets/img/habitaciones/triple-1-1200.jpg"
+                srcset="assets/img/habitaciones/triple-1-1600.jpg 1600w,
+                        assets/img/habitaciones/triple-1-1200.jpg 1200w"
+                sizes="(min-width: 992px) 900px, 100vw"
+                class="d-block w-100"
+                alt="Habitación Triple con balcón - foto 1"
+                width="1600" height="1200"
+                loading="eager" fetchpriority="high" decoding="async">
+            </picture>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <picture>
+              <source type="image/avif"
+                srcset="assets/img/habitaciones/triple-2-1600.avif 1600w,
+                        assets/img/habitaciones/triple-2-1200.avif 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <source type="image/webp"
+                srcset="assets/img/habitaciones/triple-2-1600.webp 1600w,
+                        assets/img/habitaciones/triple-2-1200.webp 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <img
+                src="assets/img/habitaciones/triple-2-1200.jpg"
+                srcset="assets/img/habitaciones/triple-2-1600.jpg 1600w,
+                        assets/img/habitaciones/triple-2-1200.jpg 1200w"
+                sizes="(min-width: 992px) 900px, 100vw"
+                class="d-block w-100"
+                alt="Habitación Triple con balcón - foto 2"
+                width="1600" height="1200"
+                loading="lazy" decoding="async">
+            </picture>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item">
+            <picture>
+              <source type="image/avif"
+                srcset="assets/img/habitaciones/triple-3-1600.avif 1600w,
+                        assets/img/habitaciones/triple-3-1200.avif 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <source type="image/webp"
+                srcset="assets/img/habitaciones/triple-3-1600.webp 1600w,
+                        assets/img/habitaciones/triple-3-1200.webp 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <img
+                src="assets/img/habitaciones/triple-3-1200.jpg"
+                srcset="assets/img/habitaciones/triple-3-1600.jpg 1600w,
+                        assets/img/habitaciones/triple-3-1200.jpg 1200w"
+                sizes="(min-width: 992px) 900px, 100vw"
+                class="d-block w-100"
+                alt="Habitación Triple con balcón - foto 3"
+                width="1600" height="1200"
+                loading="lazy" decoding="async">
+            </picture>
+          </div>
+
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselTriple" data-bs-slide="prev" aria-label="Anterior"><span class="carousel-control-prev-icon"></span></button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselTriple" data-bs-slide="next" aria-label="Siguiente"><span class="carousel-control-next-icon"></span></button>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselTriple" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselTriple" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Siguiente</span>
+        </button>
       </div>
+
       <div class="p-3 text-end">
-        <a href="https://wa.me/527621143000?text=Hola%2C%20informaci%C3%B3n%20sobre%20Habitaci%C3%B3n%20Triple" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Consultar por WhatsApp</a>
+        <a href="https://wa.me/527621143000?text=Hola%2C%20informaci%C3%B3n%20sobre%20Habitaci%C3%B3n%20Triple"
+          target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          Consultar por WhatsApp
+        </a>
       </div>
     </div></div>
   </div>
+
 
   <!-- Cuádruple -->
-  <div class="modal fade" id="modalCuadruple" tabindex="-1" aria-labelledby="ttlCuadruple" aria-hidden="true">
+  <div class="modal fade" id="modalCuadruple" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content">
       <button class="btn-close ms-auto me-2 mt-2" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-      <h5 id="ttlCuadruple" class="visually-hidden">Galería Habitación Cuádruple</h5>
-      <div id="carouselCuadruple" class="carousel slide" data-bs-ride="carousel" aria-label="Carrusel de fotos">
+
+      <!-- Autoplay desactivado -->
+      <div id="carouselCuadruple" class="carousel slide" data-bs-interval="0">
         <div class="carousel-inner">
-          <div class="carousel-item active"><img src="assets/img/habitaciones/cuadruple-1.jpg" class="d-block w-100" alt="Habitación Cuádruple, vista general"></div>
-          <div class="carousel-item"><img src="assets/img/habitaciones/cuadruple-2.jpg" class="d-block w-100" alt=""></div>
-          <div class="carousel-item"><img src="assets/img/habitaciones/cuadruple-3.jpg" class="d-block w-100" alt=""></div>
+
+          <!-- Slide 1 (activo): eager + alta prioridad -->
+          <div class="carousel-item active">
+            <picture>
+              <source type="image/avif"
+                srcset="assets/img/habitaciones/cuadruple-1-1600.avif 1600w,
+                        assets/img/habitaciones/cuadruple-1-1200.avif 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <source type="image/webp"
+                srcset="assets/img/habitaciones/cuadruple-1-1600.webp 1600w,
+                        assets/img/habitaciones/cuadruple-1-1200.webp 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <img
+                src="assets/img/habitaciones/cuadruple-1-1200.jpg"
+                srcset="assets/img/habitaciones/cuadruple-1-1600.jpg 1600w,
+                        assets/img/habitaciones/cuadruple-1-1200.jpg 1200w"
+                sizes="(min-width: 992px) 900px, 100vw"
+                class="d-block w-100"
+                alt="Habitación Cuádruple (2 camas matrimoniales) - foto 1"
+                width="1600" height="1200"
+                loading="eager" fetchpriority="high" decoding="async">
+            </picture>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <picture>
+              <source type="image/avif"
+                srcset="assets/img/habitaciones/cuadruple-2-1600.avif 1600w,
+                        assets/img/habitaciones/cuadruple-2-1200.avif 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <source type="image/webp"
+                srcset="assets/img/habitaciones/cuadruple-2-1600.webp 1600w,
+                        assets/img/habitaciones/cuadruple-2-1200.webp 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <img
+                src="assets/img/habitaciones/cuadruple-2-1200.jpg"
+                srcset="assets/img/habitaciones/cuadruple-2-1600.jpg 1600w,
+                        assets/img/habitaciones/cuadruple-2-1200.jpg 1200w"
+                sizes="(min-width: 992px) 900px, 100vw"
+                class="d-block w-100"
+                alt="Habitación Cuádruple (2 camas matrimoniales) - foto 2"
+                width="1600" height="1200"
+                loading="lazy" decoding="async">
+            </picture>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item">
+            <picture>
+              <source type="image/avif"
+                srcset="assets/img/habitaciones/cuadruple-3-1600.avif 1600w,
+                        assets/img/habitaciones/cuadruple-3-1200.avif 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <source type="image/webp"
+                srcset="assets/img/habitaciones/cuadruple-3-1600.webp 1600w,
+                        assets/img/habitaciones/cuadruple-3-1200.webp 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <img
+                src="assets/img/habitaciones/cuadruple-3-1200.jpg"
+                srcset="assets/img/habitaciones/cuadruple-3-1600.jpg 1600w,
+                        assets/img/habitaciones/cuadruple-3-1200.jpg 1200w"
+                sizes="(min-width: 992px) 900px, 100vw"
+                class="d-block w-100"
+                alt="Habitación Cuádruple (2 camas matrimoniales) - foto 3"
+                width="1600" height="1200"
+                loading="lazy" decoding="async">
+            </picture>
+          </div>
+
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselCuadruple" data-bs-slide="prev" aria-label="Anterior"><span class="carousel-control-prev-icon"></span></button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselCuadruple" data-bs-slide="next" aria-label="Siguiente"><span class="carousel-control-next-icon"></span></button>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselCuadruple" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselCuadruple" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Siguiente</span>
+        </button>
       </div>
+
       <div class="p-3 text-end">
-        <a href="https://wa.me/527621143000?text=Hola%2C%20informaci%C3%B3n%20sobre%20Habitaci%C3%B3n%20Cu%C3%A1druple" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Consultar por WhatsApp</a>
+        <a href="https://wa.me/527621143000?text=Hola%2C%20informaci%C3%B3n%20sobre%20Habitaci%C3%B3n%20Cu%C3%A1druple"
+          target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          Consultar por WhatsApp
+        </a>
       </div>
     </div></div>
   </div>
+
 
   <!-- Jr. Suite -->
-  <div class="modal fade" id="modalJrSuite" tabindex="-1" aria-labelledby="ttlJrSuite" aria-hidden="true">
+  <div class="modal fade" id="modalJrSuite" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content">
       <button class="btn-close ms-auto me-2 mt-2" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-      <h5 id="ttlJrSuite" class="visually-hidden">Galería Jr. Suite</h5>
-      <div id="carouselJrSuite" class="carousel slide" data-bs-ride="carousel" aria-label="Carrusel de fotos">
+
+      <!-- Autoplay desactivado -->
+      <div id="carouselJrSuite" class="carousel slide" data-bs-interval="0">
         <div class="carousel-inner">
-          <div class="carousel-item active"><img src="assets/img/habitaciones/jrsuite-1.jpg" class="d-block w-100" alt="Jr. Suite, vista general"></div>
-          <div class="carousel-item"><img src="assets/img/habitaciones/jrsuite-2.jpg" class="d-block w-100" alt=""></div>
-          <!-- <div class="carousel-item"><img src="assets/img/habitaciones/jrsuite-3.jpg" class="d-block w-100" alt=""></div> -->
+
+          <!-- Slide 1 (activo): eager + alta prioridad -->
+          <div class="carousel-item active">
+            <picture>
+              <source type="image/avif"
+                srcset="assets/img/habitaciones/jrsuite-1-1600.avif 1600w,
+                        assets/img/habitaciones/jrsuite-1-1200.avif 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <source type="image/webp"
+                srcset="assets/img/habitaciones/jrsuite-1-1600.webp 1600w,
+                        assets/img/habitaciones/jrsuite-1-1200.webp 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <img
+                src="assets/img/habitaciones/jrsuite-1-1200.jpg"
+                srcset="assets/img/habitaciones/jrsuite-1-1600.jpg 1600w,
+                        assets/img/habitaciones/jrsuite-1-1200.jpg 1200w"
+                sizes="(min-width: 992px) 900px, 100vw"
+                class="d-block w-100"
+                alt="Jr. Suite con balcón a la catedral y salita - foto 1"
+                width="1600" height="1200"
+                loading="eager" fetchpriority="high" decoding="async">
+            </picture>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <picture>
+              <source type="image/avif"
+                srcset="assets/img/habitaciones/jrsuite-2-1600.avif 1600w,
+                        assets/img/habitaciones/jrsuite-2-1200.avif 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <source type="image/webp"
+                srcset="assets/img/habitaciones/jrsuite-2-1600.webp 1600w,
+                        assets/img/habitaciones/jrsuite-2-1200.webp 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <img
+                src="assets/img/habitaciones/jrsuite-2-1200.jpg"
+                srcset="assets/img/habitaciones/jrsuite-2-1600.jpg 1600w,
+                        assets/img/habitaciones/jrsuite-2-1200.jpg 1200w"
+                sizes="(min-width: 992px) 900px, 100vw"
+                class="d-block w-100"
+                alt="Jr. Suite con balcón a la catedral y salita - foto 2"
+                width="1600" height="1200"
+                loading="lazy" decoding="async">
+            </picture>
+          </div>
+
+          <!-- (Opcional) Slide 3: descomenta si tienes jrsuite-3 -->
+          <!--
+          <div class="carousel-item">
+            <picture>
+              <source type="image/avif"
+                srcset="assets/img/habitaciones/jrsuite-3-1600.avif 1600w,
+                        assets/img/habitaciones/jrsuite-3-1200.avif 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <source type="image/webp"
+                srcset="assets/img/habitaciones/jrsuite-3-1600.webp 1600w,
+                        assets/img/habitaciones/jrsuite-3-1200.webp 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <img
+                src="assets/img/habitaciones/jrsuite-3-1200.jpg"
+                srcset="assets/img/habitaciones/jrsuite-3-1600.jpg 1600w,
+                        assets/img/habitaciones/jrsuite-3-1200.jpg 1200w"
+                sizes="(min-width: 992px) 900px, 100vw"
+                class="d-block w-100"
+                alt="Jr. Suite con balcón a la catedral y salita - foto 3"
+                width="1600" height="1200"
+                loading="lazy" decoding="async">
+            </picture>
+          </div>
+          -->
+
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselJrSuite" data-bs-slide="prev" aria-label="Anterior"><span class="carousel-control-prev-icon"></span></button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselJrSuite" data-bs-slide="next" aria-label="Siguiente"><span class="carousel-control-next-icon"></span></button>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselJrSuite" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselJrSuite" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Siguiente</span>
+        </button>
       </div>
+
       <div class="p-3 text-end">
-        <a href="https://wa.me/527621143000?text=Hola%2C%20informaci%C3%B3n%20sobre%20Jr.%20Suite" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Consultar por WhatsApp</a>
+        <a href="https://wa.me/527621143000?text=Hola%2C%20informaci%C3%B3n%20sobre%20Jr.%20Suite"
+          target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          Consultar por WhatsApp
+        </a>
       </div>
     </div></div>
   </div>
 
+
   <!-- Familiar -->
-  <div class="modal fade" id="modalFamiliar" tabindex="-1" aria-labelledby="ttlFamiliar" aria-hidden="true">
+  <div class="modal fade" id="modalFamiliar" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content">
       <button class="btn-close ms-auto me-2 mt-2" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-      <h5 id="ttlFamiliar" class="visually-hidden">Galería Habitación Familiar</h5>
-      <div id="carouselFamiliar" class="carousel slide" data-bs-ride="carousel" aria-label="Carrusel de fotos">
+
+      <!-- Autoplay desactivado -->
+      <div id="carouselFamiliar" class="carousel slide" data-bs-interval="0">
         <div class="carousel-inner">
-          <div class="carousel-item active"><img src="assets/img/habitaciones/familiar-1.jpg" class="d-block w-100" alt="Habitación Familiar, vista general"></div>
-          <div class="carousel-item"><img src="assets/img/habitaciones/familiar-2.jpg" class="d-block w-100" alt=""></div>
-          <div class="carousel-item"><img src="assets/img/habitaciones/familiar-3.jpg" class="d-block w-100" alt=""></div>
+
+          <!-- Slide 1 (activo): eager + alta prioridad -->
+          <div class="carousel-item active">
+            <picture>
+              <source type="image/avif"
+                srcset="assets/img/habitaciones/familiar-1-1600.avif 1600w,
+                        assets/img/habitaciones/familiar-1-1200.avif 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <source type="image/webp"
+                srcset="assets/img/habitaciones/familiar-1-1600.webp 1600w,
+                        assets/img/habitaciones/familiar-1-1200.webp 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <img
+                src="assets/img/habitaciones/familiar-1-1200.jpg"
+                srcset="assets/img/habitaciones/familiar-1-1600.jpg 1600w,
+                        assets/img/habitaciones/familiar-1-1200.jpg 1200w"
+                sizes="(min-width: 992px) 900px, 100vw"
+                class="d-block w-100"
+                alt="Habitación Familiar: 5 camas individuales - foto 1"
+                width="1600" height="1200"
+                loading="eager" fetchpriority="high" decoding="async">
+            </picture>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <picture>
+              <source type="image/avif"
+                srcset="assets/img/habitaciones/familiar-2-1600.avif 1600w,
+                        assets/img/habitaciones/familiar-2-1200.avif 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <source type="image/webp"
+                srcset="assets/img/habitaciones/familiar-2-1600.webp 1600w,
+                        assets/img/habitaciones/familiar-2-1200.webp 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <img
+                src="assets/img/habitaciones/familiar-2-1200.jpg"
+                srcset="assets/img/habitaciones/familiar-2-1600.jpg 1600w,
+                        assets/img/habitaciones/familiar-2-1200.jpg 1200w"
+                sizes="(min-width: 992px) 900px, 100vw"
+                class="d-block w-100"
+                alt="Habitación Familiar: 5 camas individuales - foto 2"
+                width="1600" height="1200"
+                loading="lazy" decoding="async">
+            </picture>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item">
+            <picture>
+              <source type="image/avif"
+                srcset="assets/img/habitaciones/familiar-3-1600.avif 1600w,
+                        assets/img/habitaciones/familiar-3-1200.avif 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <source type="image/webp"
+                srcset="assets/img/habitaciones/familiar-3-1600.webp 1600w,
+                        assets/img/habitaciones/familiar-3-1200.webp 1200w"
+                sizes="(min-width: 992px) 900px, 100vw">
+              <img
+                src="assets/img/habitaciones/familiar-3-1200.jpg"
+                srcset="assets/img/habitaciones/familiar-3-1600.jpg 1600w,
+                        assets/img/habitaciones/familiar-3-1200.jpg 1200w"
+                sizes="(min-width: 992px) 900px, 100vw"
+                class="d-block w-100"
+                alt="Habitación Familiar: 5 camas individuales - foto 3"
+                width="1600" height="1200"
+                loading="lazy" decoding="async">
+            </picture>
+          </div>
+
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselFamiliar" data-bs-slide="prev" aria-label="Anterior"><span class="carousel-control-prev-icon"></span></button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselFamiliar" data-bs-slide="next" aria-label="Siguiente"><span class="carousel-control-next-icon"></span></button>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselFamiliar" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselFamiliar" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Siguiente</span>
+        </button>
       </div>
+
       <div class="p-3 text-end">
-        <a href="https://wa.me/527621143000?text=Hola%2C%20informaci%C3%B3n%20sobre%20Habitaci%C3%B3n%20Familiar" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Consultar por WhatsApp</a>
+        <a href="https://wa.me/527621143000?text=Hola%2C%20informaci%C3%B3n%20sobre%20Habitaci%C3%B3n%20Familiar"
+          target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          Consultar por WhatsApp
+        </a>
       </div>
     </div></div>
   </div>
+
 
   <!-- Modal: Aviso de Privacidad -->
   <div class="modal fade" id="avisoModal" tabindex="-1" aria-labelledby="avisoTitle" aria-hidden="true">
