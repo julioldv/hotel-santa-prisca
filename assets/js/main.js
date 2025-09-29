@@ -74,3 +74,42 @@ document.addEventListener('scroll', () => {
   if (window.scrollY > 10) nav.classList.add('navbar-scrolled');
   else nav.classList.remove('navbar-scrolled');
 });
+
+// Preferir AVIF y, si no, WEBP en los enlaces del lightbox (-1600)
+document.addEventListener('DOMContentLoaded', () => {
+  // Detección simple de AVIF
+  const canAvif = (() => {
+    try {
+      const img = new Image();
+      img.src = 'data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAG1pZjFhdmlmAAACAGF2MDFtaWYxYXZpZgAA'; // tiny header
+      return new Promise(resolve => {
+        img.onload = () => resolve(true);
+        img.onerror = () => resolve(false);
+      });
+    } catch { return Promise.resolve(false); }
+  })();
+
+  // Detección simple de WEBP
+  const canWebp = (() => {
+    try {
+      const c = document.createElement('canvas');
+      return !!(c.getContext && c.getContext('2d')) && c.toDataURL('image/webp').indexOf('data:image/webp') === 0;
+    } catch { return false; }
+  })();
+
+  Promise.resolve(canAvif).then(avifOk => {
+    if (avifOk) {
+      document.querySelectorAll('a.glightbox[href$="-1600.jpg"]').forEach(a => {
+        const candidate = a.getAttribute('href').replace(/-1600\.jpg$/i, '-1600.avif');
+        a.setAttribute('href', candidate);
+      });
+      return;
+    }
+    if (canWebp) {
+      document.querySelectorAll('a.glightbox[href$="-1600.jpg"]').forEach(a => {
+        const candidate = a.getAttribute('href').replace(/-1600\.jpg$/i, '-1600.webp');
+        a.setAttribute('href', candidate);
+      });
+    }
+  });
+});

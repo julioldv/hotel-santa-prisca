@@ -138,14 +138,17 @@ section h2 { color: var(--color-secundario); margin-bottom: 30px; font-weight: 7
 ========================== */
 #galeria .gallery-img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4 / 3;   /* consistente con 600x450 y 400x300 */
+  height: auto;
   object-fit: cover;
   border-radius: 10px;
   transition: transform .35s ease, box-shadow .35s ease;
   display: block;
-  height: auto;
 }
-#galeria a:hover .gallery-img { transform: scale(1.02); box-shadow: 0 10px 26px rgba(0,0,0,.15); }
+#galeria a:hover .gallery-img {
+  transform: scale(1.02);
+  box-shadow: 0 10px 26px rgba(0,0,0,.15);
+}
 
 /* Fallback si no hay soporte de aspect-ratio */
 @supports not (aspect-ratio: 1 / 1){
