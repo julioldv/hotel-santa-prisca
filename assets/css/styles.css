@@ -236,6 +236,8 @@ section h2 { color: var(--color-secundario); margin-bottom: 30px; font-weight: 7
   #avisoModal .ratio { height: 100%; }
 }
 
+
+
 /* ==========================
    ACCESIBILIDAD
 ========================== */
@@ -245,4 +247,95 @@ section h2 { color: var(--color-secundario); margin-bottom: 30px; font-weight: 7
 .skip-link:focus{
   left: 16px; top: 16px; width: auto; height: auto; padding: .5rem .75rem;
   background: #000; color: #fff; z-index: 1100; border-radius: 8px; text-decoration: none;
+}
+
+/* ===== Modal de promoción ===== */
+.promo-modal .modal-content {
+  background: transparent;      /* la imagen toma todo */
+  border-radius: 12px;
+}
+.promo-modal .btn-close {
+  filter: invert(1);            /* visible sobre fotos oscuras */
+}
+/* En móviles, que el modal no ocupe todo el alto visual */
+@media (max-width: 576px){
+  .promo-modal .modal-dialog {
+    margin: 1rem;
+  }
+}
+
+/* ===== Tamaño más contenido para el modal de promo ===== */
+.promo-modal .modal-dialog{
+  /* ancho máximo en desktop; elige el que te guste entre 520–720px */
+  max-width: clamp(420px, 50vw, 640px);
+  width: auto;
+}
+
+.promo-modal .modal-content{
+  border-radius: 14px;
+  overflow: hidden;
+  background: transparent;
+}
+
+/* la imagen nunca debe ocupar más de X% del alto de la ventana */
+.promo-modal picture,
+.promo-modal img{
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 75vh;        /* no más del 75% de la altura de la pantalla */
+  object-fit: contain;     /* sin recortes; la imagen se ajusta */
+}
+
+/* pie del modal más compacto */
+.promo-modal .p-3{
+  padding: .75rem !important;
+}
+
+/* móviles: que respire y no choque con bordes */
+@media (max-width: 576px){
+  .promo-modal .modal-dialog{ 
+    margin: 1rem;
+    max-width: 92vw;
+  }
+  .promo-modal img{ 
+    max-height: 78vh; 
+  }
+}
+
+/* botón cerrar visible sobre fondos claros/oscursos */
+.promo-modal .btn-close{ 
+  filter: invert(1); 
+}
+
+/* tamaño final (desktop) */
+.promo-modal .modal-dialog{
+  max-width: clamp(420px, 46vw, 560px); /* antes 640px */
+}
+
+/* sombra y bordes */
+.promo-modal .modal-content{
+  border-radius: 16px;
+  overflow: hidden;
+  background: transparent;
+  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+}
+
+/* pie más compacto */
+.promo-modal .p-3{
+  padding: .65rem .9rem !important;
+}
+
+/* un poco más contenido en desktop */
+.promo-modal .modal-dialog{
+  max-width: clamp(420px, 42vw, 520px); /* antes 560–640 */
+}
+.promo-modal picture,
+.promo-modal img{
+  max-height: 72vh;     /* baja de 75vh a 72vh para +aire */
+  object-fit: contain;  /* mantener SIN recorte (recomendado para promos con texto) */
+}
+/* CTA más cómodo en móvil */
+@media (max-width: 576px){
+  .promo-modal .p-3 .btn { width: 100%; }
 }

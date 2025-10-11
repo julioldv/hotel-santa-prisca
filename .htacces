@@ -1,0 +1,6 @@
+# Activar motor de redirecciones
+RewriteEngine On
+
+# 🌐 Redirigir dominio sin www → con www
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [L,R=301]

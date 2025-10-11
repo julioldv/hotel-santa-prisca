@@ -113,3 +113,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+// ===== PROMO MODAL =====
+// Guarda el "no mostrar" por N días
+const PROMO_KEY = 'promoDismissedUntil';
+function setPromoDismissed(days = 7) {
+  const until = Date.now() + days * 24 * 60 * 60 * 1000;
+  localStorage.setItem(PROMO_KEY, String(until));
+}
+function shouldShowPromo() {
+  const params = new URLSearchParams(location.search);
+  // Forzar mostrar: ?promo=1
+  if (params.get('promo') === '1') return true;
+  const until = parseInt(localStorage.getItem(PROMO_KEY) || '0', 10);
+  return !until || Date.now() > until;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const modalEl = document.getElementById('promoModal');
+  if (!modalEl) return;
+
+  const modal = new bootstrap.Modal(modalEl, {
+    backdrop: true,             // puedes poner 'static' si quieres obligar a usar el botón cerrar
+    keyboard: true
+  });
+
+  if (shouldShowPromo()) {
+    // Pequeño delay para no tapar la carga inicial
+    setTimeout(() => modal.show(), 800);
+  }
+
+  const hideChk = document.getElementById('promoHide');
+  modalEl.addEventListener('hidden.bs.modal', () => {
+    if (hideChk && hideChk.checked) setPromoDismissed(7);
+  });
+});
