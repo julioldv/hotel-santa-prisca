@@ -140,7 +140,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (shouldShowPromo()) {
     // Pequeño delay para no tapar la carga inicial
-    setTimeout(() => modal.show(), 800);
+    //Comentar o descomentar la linea de abajo si se quiero o no mostrar el modal
+    // setTimeout(() => modal.show(), 800);
   }
 
   const hideChk = document.getElementById('promoHide');
