@@ -7,37 +7,41 @@
   <title>Hotel Santa Prisca — Hotel en el centro de Taxco, Guerrero</title>
   <meta name="description" content="Hotel Santa Prisca en el centro histórico de Taxco. Habitaciones cómodas, balcón en categorías seleccionadas, terraza y jardín. Reserva por WhatsApp.">
 
-  <!-- Canonical (ajusta si usas www o si temporalmente será http) -->
-  <link rel="canonical" href="https://hotelsantaprisca.com.mx/">
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.hotelsantaprisca.com.mx/">
 
-  <!-- Idioma / país -->
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="es-MX" href="https://www.hotelsantaprisca.com.mx/">
+  <link rel="alternate" hreflang="en" href="https://www.hotelsantaprisca.com.mx/en/">
+  <link rel="alternate" hreflang="x-default" href="https://www.hotelsantaprisca.com.mx/">
+
+  <!-- Idioma -->
   <meta http-equiv="content-language" content="es-MX">
-  <!-- Para futuro sitio en inglés, más abajo agregaremos hreflang -->
 
   <!-- Favicon -->
   <link rel="icon" href="assets/img/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="assets/img/favicon-32.png" sizes="32x32">
   <meta name="theme-color" content="#2F4A7E">
 
-  <!-- Preconexiones para fonts (pequeña mejora de rendimiento) -->
+  <!-- Preconnect fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <!-- Preload de la imagen del hero (AVIF si está disponible) -->
-  <link rel="preload" as="image" href="assets/img/fachada.avif" imagesrcset="assets/img/fachada.avif 1x, assets/img/fachada.webp 1x, assets/img/fachada.jpg 1x" imagesizes="100vw">
+  <!-- Preload HERO (simple y efectivo) -->
+  <link rel="preload" as="image" href="assets/img/fachada.avif" type="image/avif">
 
   <!-- Open Graph -->
   <meta property="og:locale" content="es_MX">
+  <meta property="og:locale:alternate" content="en_US">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Hotel Santa Prisca">
   <meta property="og:title" content="Hotel Santa Prisca — Hotel en el centro de Taxco, Guerrero">
   <meta property="og:description" content="Hotel Santa Prisca en el centro histórico de Taxco. Habitaciones cómodas, balcón en categorías seleccionadas, terraza y jardín. Reserva por WhatsApp.">
-  <meta property="og:url" content="https://hotelsantaprisca.com.mx/">
-  <!-- Usa una imagen 1200×630 específica para compartir en redes -->
-  <meta property="og:image" content="https://hotelsantaprisca.com.mx/assets/img/og-cover.jpg">
+  <meta property="og:url" content="https://www.hotelsantaprisca.com.mx/">
+  <meta property="og:image" content="https://www.hotelsantaprisca.com.mx/assets/img/og-cover.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
@@ -45,24 +49,25 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Hotel Santa Prisca — Hotel en el centro de Taxco, Guerrero">
   <meta name="twitter:description" content="Hotel Santa Prisca en el centro histórico de Taxco. Habitaciones cómodas, balcón en categorías seleccionadas, terraza y jardín. Reserva por WhatsApp.">
-  <meta name="twitter:image" content="https://hotelsantaprisca.com.mx/assets/img/og-cover.jpg">
+  <meta name="twitter:image" content="https://www.hotelsantaprisca.com.mx/assets/img/og-cover.jpg">
 
-  <!-- Bootstrap & estilos -->
+  <!-- CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
   <link rel="stylesheet" href="assets/css/styles.css">
 
+  <!-- Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Hotel",
     "name": "Hotel Santa Prisca",
-    "url": "https://hotelsantaprisca.com.mx/",
+    "url": "https://www.hotelsantaprisca.com.mx/",
     "image": [
-      "https://hotelsantaprisca.com.mx/assets/img/galeria/full/01-1600.jpg",
-      "https://hotelsantaprisca.com.mx/assets/img/galeria/full/02-1600.jpg",
-      "https://hotelsantaprisca.com.mx/assets/img/galeria/full/03-1600.jpg"
+      "https://www.hotelsantaprisca.com.mx/assets/img/galeria/full/01-1600.jpg",
+      "https://www.hotelsantaprisca.com.mx/assets/img/galeria/full/02-1600.jpg",
+      "https://www.hotelsantaprisca.com.mx/assets/img/galeria/full/03-1600.jpg"
     ],
     "address": {
       "@type": "PostalAddress",
@@ -85,19 +90,11 @@
     ],
     "hasMap": "https://maps.app.goo.gl/Rr7cr5Y4WNXv12vT6",
     "checkinTime": "15:00",
-    "checkoutTime": "12:00",
-    "amenityFeature": [
-      {"@type": "LocationFeatureSpecification","name": "Wi-Fi","value": true},
-      {"@type": "LocationFeatureSpecification","name": "Estacionamiento","value": true},
-      {"@type": "LocationFeatureSpecification","name": "Recepción","value": true},
-      {"@type": "LocationFeatureSpecification","name": "Limpieza diaria","value": true},
-      {"@type": "LocationFeatureSpecification","name": "Terraza","value": true},
-      {"@type": "LocationFeatureSpecification","name": "Jardín","value": true}
-    ]
+    "checkoutTime": "12:00"
   }
   </script>
-
 </head>
+
 
 
 <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="90">
@@ -128,6 +125,14 @@
             <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
             <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
           </ul>
+          <!-- Languages -->
+          <div class="lang-switch ms-lg-3 mt-3 mt-lg-0" aria-label="Language switch">
+            <a class="lang-link active" href="/" lang="es" hreflang="es-MX" aria-label="Ver sitio en Español">ES</a>
+            <span class="lang-sep" aria-hidden="true">|</span>
+            <a class="lang-link" href="/en/" lang="en" hreflang="en" aria-label="View site in English">EN</a>
+          </div>
+
+
           <a href="https://wa.me/527621143000" target="_blank" rel="noopener noreferrer"
              class="btn btn-primary ms-lg-3 mt-3 mt-lg-0">
             Reservar <i class="bi bi-whatsapp"></i>
