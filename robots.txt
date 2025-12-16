@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hotelsantaprisca.com.mx/sitemap.xml
+Sitemap: https://www.hotelsantaprisca.com.mx/sitemap.xml
