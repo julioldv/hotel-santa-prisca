@@ -5,13 +5,12 @@ RewriteCond %{HTTPS} !=on [OR]
 RewriteCond %{HTTP_HOST} !^www\.hotelsantaprisca\.com\.mx$ [NC]
 RewriteRule ^ https://www.hotelsantaprisca.com.mx%{REQUEST_URI} [L,R=301]
 
-# 2) (Opcional pero recomendado) /en -> /en/
-RewriteRule ^en$ https://www.hotelsantaprisca.com.mx/en/ [L,R=301]
+# 2) /en -> /en/
+RewriteRule ^en$ /en/ [L,R=301]
 
-# 3) (Opcional) Evitar /index.html en URL
+# 3) Evitar /index.html y /en/index.html
 RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
-RewriteRule ^index\.html$ https://www.hotelsantaprisca.com.mx/ [L,R=301]
+RewriteRule ^index\.html$ / [L,R=301]
 
 RewriteCond %{THE_REQUEST} \s/+en/index\.html[\s?] [NC]
-RewriteRule ^en/index\.html$ https://www.hotelsantaprisca.com.mx/en/ [L,R=301]
-
+RewriteRule ^en/index\.html$ /en/ [L,R=301]
