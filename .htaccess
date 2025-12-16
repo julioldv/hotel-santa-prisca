@@ -1,0 +1,17 @@
+RewriteEngine On
+
+# 1) Forzar https + www
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} !^www\.hotelsantaprisca\.com\.mx$ [NC]
+RewriteRule ^ https://www.hotelsantaprisca.com.mx%{REQUEST_URI} [L,R=301]
+
+# 2) (Opcional pero recomendado) /en -> /en/
+RewriteRule ^en$ https://www.hotelsantaprisca.com.mx/en/ [L,R=301]
+
+# 3) (Opcional) Evitar /index.html en URL
+RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+RewriteRule ^index\.html$ https://www.hotelsantaprisca.com.mx/ [L,R=301]
+
+RewriteCond %{THE_REQUEST} \s/+en/index\.html[\s?] [NC]
+RewriteRule ^en/index\.html$ https://www.hotelsantaprisca.com.mx/en/ [L,R=301]
+
