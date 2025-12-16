@@ -339,3 +339,34 @@ section h2 { color: var(--color-secundario); margin-bottom: 30px; font-weight: 7
 @media (max-width: 576px){
   .promo-modal .p-3 .btn { width: 100%; }
 }
+
+/* ===== Selector de idioma ===== */
+.lang-switch{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+}
+
+.lang-link{
+  text-decoration:none;
+  font-weight:600;
+  color: var(--color-texto);
+  opacity:.9;
+  padding:.15rem .25rem;
+  border-radius:.4rem;
+}
+
+.lang-link:hover{
+  color: var(--color-primario);
+  opacity:1;
+}
+
+.lang-link.active{
+  color: var(--color-primario);
+  opacity:1;
+}
+
+.lang-sep{
+  color: rgba(0,0,0,.35);
+  font-size:.9rem;
+}

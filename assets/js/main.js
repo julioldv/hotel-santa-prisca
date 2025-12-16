@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (shouldShowPromo()) {
     // Pequeño delay para no tapar la carga inicial
-    //Comentar o descomentar la linea de abajo si se quiero o no mostrar el modal
+    //Comentar o descomentar la linea de abajo si se quiere o no mostrar el modal
     // setTimeout(() => modal.show(), 800);
   }
 
